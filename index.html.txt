@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>🏹 Math Archery 🎯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- MENU -->
+<div id="menu" class="screen active">
+  <h1 id="gameTitle">🏹 Math Archery 🎯</h1>
+  <div class="glass">
+    <label>Jumlah Pemain</label>
+    <select id="playerCount">
+      <option value="1">1 Pemain</option>
+      <option value="2">2 Pemain</option>
+      <option value="3">3 Pemain</option>
+    </select>
+
+    <label>Tingkat Kesulitan</label>
+    <select id="difficulty">
+      <option value="easy">🌱 Mudah (SD)</option>
+      <option value="medium">🔥 Sulit (SMP)</option>
+      <option value="hard">💀 Sangat Sulit (SMA)</option>
+    </select>
+
+    <button onclick="startGame()">START</button>
+  </div>
+</div>
+
+<!-- GAME -->
+<div id="game" class="screen">
+  <header>
+    <button onclick="backToMenu()">⬅ Menu</button>
+    <div>
+      ⏱ <span id="timer">60</span>s |
+      Ronde <span id="round">1</span>/10
+      <div class="progress"><div id="progressBar"></div></div>
+      <p id="turnInfo"></p>
+    </div>
+  </header>
+
+  <h2 id="question">Soal</h2>
+  <div id="targets" class="targets"></div>
+  <div class="bow">🏹</div>
+
+  <div id="playerCards"></div>
+</div>
+
+<!-- RESULT -->
+<div id="result" class="screen">
+  <h1>🏆 LEADERBOARD</h1>
+  <div id="leaderboard"></div>
+  <button onclick="exportCSV()">📤 Export Nilai</button>
+  <button onclick="startGame()">Main Lagi</button>
+  <button onclick="backToMenu()">Menu</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
